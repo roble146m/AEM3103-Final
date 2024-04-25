@@ -1,5 +1,6 @@
 function [V Gam H R] = setup_sim()
-global CL CD S m g rho	
+global CL CD S m g rho
+
 	S		=	0.017;			% Reference Area, m^2
 	AR		=	0.86;			% Wing Aspect Ratio
 	e		=	0.9;			% Oswald Efficiency Factor;
@@ -17,7 +18,5 @@ global CL CD S m g rho
 	V		=	sqrt(2 * m * g /(rho * S * (CL * cos(Gam) - CD * sin(Gam))));
 							% Corresponding Velocity, m/s
 	Alpha	=	CL / CLa;			% Corresponding Angle of Attack, rad
-
     H		=	2;			% Initial Height, m
 	R		=	0;			% Initial Range, m
-
