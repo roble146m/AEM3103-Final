@@ -5,7 +5,7 @@
 %   (w/multiple ~100 trajectories) with a single curve fit. 
 %   Recommended to use a single line color
 
-clc; clear; close all;
+clear; clc; close all;
 
 %	a) Equilibrium Glide at Maximum Lift/Drag Ratio
 	[V Gam H R] = setup_sim();
@@ -46,22 +46,40 @@ clc; clear; close all;
 %   legend("a", "b1", "c1", "d1");
 
     figure; hold on;
+    % TODO: Change labels font size and axes number font/size
     ords = [1, 2];
     for i = 1:length(ords)
         ord = ords(i);
         subplot(2, 1, i);
         if i == 1
             plot(xc1(:,4),xc1(:,3),"k",xd1(:,4),xd1(:,3),"g",xb1(:,4),xb1(:,3),"r");
-            title(["Height vs. Range", "Varying Initial Velocity"]);
-            xlabel('Range (m)'), ylabel('Height (m)'), grid
-            legend("Nominal", "Higher", "Lower");
+            title(["Height vs. Range", "Varying Initial Velocity"], "FontName", "Times New Roman");
+            xlabel('Range (m)', "FontName", "Times New Roman"), ylabel('Height (m)', "FontName", "Times New Roman"), grid
+            legend("Nominal", "Higher", "Lower", "FontName", "Times New Roman");
         else
             plot(xc2(:,4),xc2(:,3),"k",xd2(:,4),xd2(:,3),"g", xb2(:,4),xb2(:,3),"r");
-            title(["Height vs. Range", "Varying Initial Flight Path Angle"]);
-            xlabel('Range (m)'), ylabel('Height (m)'), grid
-            legend("Nominal", "Higher", "Lower");
+            title(["Height vs. Range", "Varying Initial Flight Path Angle"], "FontName", "Times New Roman");
+            xlabel('Range (m)', "FontName", "Times New Roman"), ylabel('Height (m)', "FontName", "Times New Roman"), grid
+            legend("Nominal", "Higher", "Lower", "FontName", "Times New Roman");
         end
     end
+
+figure; hold on;
+title(["Height vs. Range", "Random Parameters"], "FontName", "Times New Roman");
+xlabel('Range (m)', "FontName", "Times New Roman"), ylabel('Height (m)', "FontName", "Times New Roman"), grid
+% Change tspan?
+% Plotting H vs. R? Only Changing V and gam randomly?
+Vrange = [2, 7.5];
+Gamrange = [-0.5, 0.4];
+for i = 1:100
+    Vrand = Vrange(1) + (Vrange(2)-Vrange(1))*rand(1);
+    Gamrand = Gamrange(1) + (Gamrange(2)-Gamrange(1))*rand(1);
+    xo		=	[Vrand;Gamrand;H;R];
+	[t,x]	=	ode23('EqMotion',tspan,xo);   
+    plot(x(:,4),x(:,3), "Color", [190, 190, 190]/255);
+    hold on;
+end
+
 
 % 	figure
 % 	subplot(2,2,1)
