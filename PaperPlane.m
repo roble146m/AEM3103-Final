@@ -92,14 +92,30 @@ for i = 1:100
     R_array(i) = xo(4);
 end
 
-p_H = polyfit(t, H_array, 4); 
-H_fit = polyval(p_H, t); 
-p_R = polyfit(t, R_array, 4);
-R_fit = polyval(p_R, t);
+% Poly order? 
+poly_H = polyfit(t, H_array, 4); 
+H_fit = polyval(poly_H, t); 
+poly_R = polyfit(t, R_array, 4);
+R_fit = polyval(poly_R, t);
 
 %% Part 5
 
-
+H_der = central_der(t, H_fit);
+R_der = central_der(t, R_fit);
+figure; hold on;
+for i = 1:2
+    subplot(2, 1, i);
+    if i == 1
+        plot(t, H_der, 'b');
+        title("Time Derivate of Height", "FontName", "Times New Roman")
+        xlabel("Time (sec)", "FontName", "Times New Roman"); ylabel("Height Derive (m/sec)", "FontName", "Times New Roman");
+    end
+    if i == 2
+        plot(t, R_der, "r");
+        title("Time Derivate of Range", "FontName", "Times New Roman")
+        xlabel("Time (sec)", "FontName", "Times New Roman"); ylabel("Range Derive (m/sec)", "FontName", "Times New Roman");
+    end
+end
 
 %% Extra Stuff
 % 	figure
