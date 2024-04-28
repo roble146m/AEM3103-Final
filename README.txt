@@ -1,5 +1,9 @@
-#Paper Airplane Numerical Study
+# Paper Airplane Numerical Study
 ## Final Project: AEM 3103 Spring 2024
+
+**Bold**
+
+*Italics*
 
   - By: Monica Robles
 
