@@ -20,6 +20,7 @@
   A list of each function/script and a single-line description of what it does.  The name of the function/script should link to the file in the repository on GitHub.
 
   - Include README.md??
+<<<<<<< HEAD
   - [PaperPlane.m](PaperPlane.m)
     - 
   - [central_der.m](central_der.m)
@@ -27,6 +28,15 @@
   - [setup_sim.m](setup_sim.m)
     - 
   - [EqMotion.m](EqMotion.m)
+=======
+  - [PaperPlane.m](./AEM3103-Final/PaperPlane.m)
+    - 
+  - [central_der.m](./AEM3103-Final/central_der.m)
+    - 
+  - [setup_sim.m](./AEM3103-Final/setup_sim.m)
+    - 
+  - [EqMotion.m](./AEM3103-Final/EqMotion.m)
+>>>>>>> 254340ad94be460e805903c0866403ba1a6e8b77
     - 
 
 # Figures
