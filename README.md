@@ -20,13 +20,13 @@
   A list of each function/script and a single-line description of what it does.  The name of the function/script should link to the file in the repository on GitHub.
 
   - Include README.md??
-  - [PaperPlane.m](./AEM3103-Final/PaperPlane.m)
+  - [PaperPlane.m](PaperPlane.m)
     - 
-  - [central_der.m](./AEM3103-Final/central_der.m)
+  - [central_der.m](central_der.m)
     - 
-  - [setup_sim.m](./AEM3103-Final/setup_sim.m)
+  - [setup_sim.m](setup_sim.m)
     - 
-  - [EqMotion.m](./AEM3103-Final/EqMotion.m)
+  - [EqMotion.m](EqMotion.m)
     - 
 
 # Figures
