@@ -15,7 +15,7 @@ global CL CD S m g rho
 	CD		=	CDo + epsilon * CL^2;	% Corresponding CD
 	LDmax	=	CL / CD;			% Maximum Lift/Drag Ratio
 	Gam		=	-atan(1 / LDmax);	% Corresponding Flight Path Angle, rad
-	V		=	sqrt(2 * m * g /(rho * S * (CL * cos(Gam) - CD * sin(Gam))));
+	V		=	sqrt(2*m*g/(rho*S*(CL*cos(Gam) - CD*sin(Gam))));
 							% Corresponding Velocity, m/s
 	Alpha	=	CL / CLa;			% Corresponding Angle of Attack, rad
     H		=	2;			% Initial Height, m
