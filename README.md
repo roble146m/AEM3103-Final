@@ -30,16 +30,16 @@
 # Figures
 
 ## Fig. 1: Single Parameter Variation
-  ![Figure of 2D trajectories simulated by varying initial velocity (subplot 1) and initial flight path angle (subplot 2).](./Figures/Fig_1_single_param_var.pdf)
+  ![Figure of 2D trajectories simulated by varying initial velocity (subplot 1) and initial flight path angle (subplot 2).](./Figures/Fig_1_single_param_var.png)
 
   Figure of 2D flight trajectories simulated by varying the initial velocity (first subplot) and initial flight path angle (second subplot). 
 
 ## Fig. 2: Monte Carlo Simulation
-  ![Figure of 10th order polynomial fit to 100 2D trajectories of randomized initial variables.](./Figures/Fig_2_monte_carlo_sim.pdf)
+  ![Figure of 10th order polynomial fit to 100 2D trajectories of randomized initial variables.](./Figures/Fig_2_monte_carlo_sim.png)
 
   Figure of 2D trajectories simulated using random initial velocity and initial flight path angle values. The plot also contains a 10th order polynomial fit that averages all 100 trajectories. 
 
 ## Fig. 3: Time Derivatives
-  ![Figure of average 2D trajectory height time derivative (subplot 1) and range time derivative (subplot 2).](./Figures/Fig_3_time_der.pdf)
+  ![Figure of average 2D trajectory height time derivative (subplot 1) and range time derivative (subplot 2).](./Figures/Fig_3_time_der.png)
 
   Figure of average 2D trajectory time derivative of height versus time (first subplot) and time derivative of range versus time (second subplot).
