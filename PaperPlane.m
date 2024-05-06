@@ -12,7 +12,7 @@
 	xo		=	[V;Gam;H;R];
 	[ta,xa]	=	ode23('EqMotion',tspan,xo);
 	
-%% Part 2
+%% Part 2: Single Parameter Variation
 %	b1) Oscillating Glide due to lower Initial Velocity 
 	xo		=	[2;Gam;H;R];
 	[tb1,xb1]	=	ode23('EqMotion',tspan,xo);
@@ -40,7 +40,7 @@
 figure; hold on; 
 set(gcf,"PaperUnits","inches");
 set(gcf,"PaperSize", [7.5 11]);
-set(gcf,"PaperPosition",[-1 0 9.5 11]);
+set(gcf,"PaperPosition",[0 0 7.5 11]);
 set(gcf,"PaperPositionMode","Manual");
 for i = 1:2
     subplot(2, 1, i);
@@ -84,9 +84,9 @@ for i = 1:2
     end
 end
 
-print(gcf, "-dpdf", "-r150", "Fig_1_single_param_var.pdf");
+saveas(gcf, "Fig_1_single_param_var.png");
 
-%% Parts 3 and 4
+%% Parts 3 and 4: Monte Carlo Simulation
 figure; hold on;
 set(gcf,"PaperUnits","inches");
 set(gcf,"PaperSize", [9.5 8.5]);
@@ -135,9 +135,9 @@ poly_R = polyfit(t_array, R_array, 10);
 R_fit = polyval(poly_R, t);
 plot(R_fit, H_fit, "r", "LineWidth", 5);
 set(legend("Average 2D Trajectory", "FontSize", 18));
-print(gcf, "-dpdf", "-r150", "Fig_2_monte_carlo_sim.pdf");
+saveas(gcf, "Fig_2_monte_carlo_sim.png");
 
-%% Part 5
+%% Part 5: Time Derivatives
 H_der = central_der(t, H_fit);
 R_der = central_der(t, R_fit);
 figure; hold on;
@@ -178,4 +178,4 @@ for i = 1:2
     end
 end
 
-print(gcf, "-dpdf", "-r150", "Fig_3_time_der.pdf");
+saveas(gcf, "Fig_3_time_der.png");
